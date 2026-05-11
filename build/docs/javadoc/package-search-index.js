@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io.github.roebi.qffxguilib.telemetry"}];updateSearchResults();

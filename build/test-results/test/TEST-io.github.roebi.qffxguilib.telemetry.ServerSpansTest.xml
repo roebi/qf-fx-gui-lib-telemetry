@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-05-11T13:11:43.668Z" hostname="fedora.home" time="0.005">
+  <properties/>
+  <testcase name="resolverLookup_spanIsFinishedAfterClose()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.001"/>
+  <testcase name="resolverLookup_hasStepIdAttribute()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="resolverLookup_hasComponentAttribute()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="resolverLookup_spanName_isResolverLookup()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.001"/>
+  <testcase name="agentRoundTrip_spanName_isAgentCommandRoundtrip()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="resolverLookup_hasClientIdAttribute()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="agentRoundTrip_viaExplicitTracer()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="agentRoundTrip_hasClientIdAttribute()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="activeSpan_setLongAttribute_isRecorded()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.001"/>
+  <testcase name="agentRoundTrip_hasCommandTypeAttribute()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="resolverLookup_viaExplicitTracer()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.0"/>
+  <testcase name="activeSpan_recordException_marksSpanAsError()" classname="io.github.roebi.qffxguilib.telemetry.ServerSpansTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
