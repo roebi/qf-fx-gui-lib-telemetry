@@ -1,6 +1,6 @@
 [versions]
 opentelemetry        = "1.62.0"
-junit-jupiter        = "5.10.2"
+junit-jupiter        = "6.0.3"
 junit-platform       = "6.0.3"
 assertj              = "3.27.7"
 
