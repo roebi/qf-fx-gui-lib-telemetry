@@ -1,7 +1,16 @@
 plugins {
+    id("org.owasp.dependencycheck") version "12.2.2" apply false
     `java-library`
     `maven-publish`
     signing
+}
+
+allprojects {
+    apply(plugin = "org.owasp.dependencycheck")
+}
+
+configure<org.owasp.dependencycheck.gradle.extension.DependencyCheckExtension> {
+    format = org.owasp.dependencycheck.reporting.ReportGenerator.Format.ALL.toString()
 }
 
 group   = "io.github.roebi"
