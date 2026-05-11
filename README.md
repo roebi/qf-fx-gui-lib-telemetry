@@ -4,7 +4,7 @@ OpenTelemetry instrumentation library for QFTest FX GUI Library performance meas
 
 ## Architecture
 
-```
+```Architecture
 QFTest Server JVM  (one per test run)
   ServerTelemetry.init()  ->  ServerSpans.*
 
@@ -17,7 +17,7 @@ Client JVM 1..N  (one per SUT instance)
 ## The 5 Measurement Points
 
 | # | Span name | JVM | Class |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | `resolver.lookup` | Server | `ServerSpans.resolverLookup()` |
 | 2 | `agent.command.roundtrip` | Server | `ServerSpans.agentRoundTrip()` |
 | 3 | `fx.queue.wait` | Client | `ClientSpans.startQueueWait()` |
@@ -49,7 +49,7 @@ podman run --rm -d \
   jaegertracing/all-in-one:latest
 ```
 
-Open http://localhost:16686 after the test run.
+Open [http://localhost:16686](http://localhost:16686) after the test run.
 
 Note: this library uses OTLP/HTTP (port 4318), not gRPC (port 4317),
 to keep the dependency tree simple.
@@ -134,7 +134,7 @@ ClientTelemetry.shutdown();
 Search by tag `qf.step.id=<value>` to correlate server and client spans for the same test step.
 
 | Finding | Likely cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | `resolver.lookup` slow | Linear scan of resolver list | HashMap by component type |
 | `agent.command.roundtrip` slow | Serialization or IPC latency | Batch commands |
 | `fx.queue.wait_ms` high | FAT overloaded | Reduce `runLater` frequency |
