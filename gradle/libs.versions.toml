@@ -2,7 +2,7 @@
 opentelemetry        = "1.40.0"
 junit-jupiter        = "5.10.2"
 junit-platform       = "1.10.2"
-assertj              = "3.25.3"
+assertj              = "3.27.7"
 
 [libraries]
 opentelemetry-api            = { module = "io.opentelemetry:opentelemetry-api",            version.ref = "opentelemetry" }
