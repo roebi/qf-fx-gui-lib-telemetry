@@ -154,3 +154,7 @@ dependencies {
     // OTel SDK + exporter (transitive via the lib, or declare explicitly)
 }
 ```
+
+## publish.yml Dependency audit gradlew dependencyCheckAnalyze
+
+This product uses the NVD API but is not endorsed or certified by the NVD.
