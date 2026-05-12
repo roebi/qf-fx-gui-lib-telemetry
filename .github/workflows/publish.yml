@@ -30,11 +30,14 @@ jobs:
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
 
-      - name: Publish to Maven Central
-        run: ./gradlew publishMavenJavaPublicationToSonatypeCentralRepository --no-daemon
+      - name: Publish to Maven Central via nmcp
+        # nmcp bundles the publication into a ZIP and uploads it via the
+        # Central Portal publisher API - not the standard Maven PUT protocol.
+        run: ./gradlew publishAggregationToCentralPortal --no-daemon
         env:
-          OSSRH_USERNAME:   ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD:   ${{ secrets.OSSRH_PASSWORD }}
-          SIGNING_KEY_ID:   ${{ secrets.SIGNING_KEY_ID }}
-          SIGNING_KEY:      ${{ secrets.SIGNING_KEY }}
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
+          SIGNING_KEY:    ${{ secrets.SIGNING_KEY }}
           SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+

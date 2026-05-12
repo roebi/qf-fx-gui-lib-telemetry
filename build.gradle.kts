@@ -110,20 +110,7 @@ publishing {
         }
     }
 
-    repositories {
-        maven {
-            name = "SonatypeCentral"
-            url  = uri("https://central.sonatype.com/api/v1/publisher/upload")
-            credentials {
-                // null-safe: returns null at config time when not set;
-                // only fails with a clear error when publishMavenJava... task actually runs
-                username = System.getenv("OSSRH_USERNAME")
-                    ?: findProperty("OSSRH_USERNAME") as String?
-                password = System.getenv("OSSRH_PASSWORD")
-                    ?: findProperty("OSSRH_PASSWORD") as String?
-            }
-        }
-    }
+    // Repository upload is handled by nmcp (settings.gradle.kts)
 }
 
 signing {
