@@ -1,16 +1,8 @@
 plugins {
-    id("org.owasp.dependencycheck") version "12.2.2" apply false
     `java-library`
     `maven-publish`
     signing
-}
-
-allprojects {
-    apply(plugin = "org.owasp.dependencycheck")
-}
-
-configure<org.owasp.dependencycheck.gradle.extension.DependencyCheckExtension> {
-    format = org.owasp.dependencycheck.reporting.ReportGenerator.Format.ALL.toString()
+    alias(libs.plugins.owasp.dependencycheck)
 }
 
 group   = "io.github.roebi"
@@ -57,6 +49,33 @@ tasks.jar {
             "Implementation-Version" to project.version,
         )
     }
+}
+
+// ---------------------------------------------------------------------------
+// Supply-chain audit - OWASP Dependency Check
+//
+// Required secret: NVD_API_KEY  (generate at https://nvd.nist.gov/developers/request-an-api-key)
+// Without the key the NVD data download is heavily rate-limited and VERY slow.
+//
+// Run locally:
+//   NVD_API_KEY=<your-key> ./gradlew dependencyCheckAnalyze
+// ---------------------------------------------------------------------------
+
+dependencyCheck {
+    // Read the key from the environment; empty string = no key (slow but not broken)
+    nvd.apiKey = System.getenv("NVD_API_KEY") ?: ""
+
+    // Fail the build on CVSS score >= 7 (HIGH or CRITICAL)
+    failBuildOnCVSS = 7.0f
+
+    // Keep the NVD data cache between runs (CI: cache the suppressions dir)
+    autoUpdate = true
+
+    // HTML + JSON reports under build/reports/dependency-check/
+    formats = listOf("HTML", "JSON")
+
+    // Suppress false positives by adding entries to this file as needed
+    suppressionFile = "dependency-check-suppressions.xml"
 }
 
 // ---------------------------------------------------------------------------

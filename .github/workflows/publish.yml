@@ -26,10 +26,8 @@ jobs:
       - name: Run tests
         run: ./gradlew test --no-daemon
 
-      # supply-chain audit: fail on known CVEs in dependencies
-      - name: Dependency audit
+      - name: Supply-chain audit (OWASP Dependency Check)
         run: ./gradlew dependencyCheckAnalyze --no-daemon
-        continue-on-error: false
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
 

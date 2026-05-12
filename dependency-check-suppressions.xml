@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OWASP Dependency Check false-positive suppressions.
+  Add <suppress> entries here when a CVE is confirmed not applicable.
+
+  Format reference:
+  https://jeremylong.github.io/DependencyCheck/general/suppression.html
+
+  Example:
+  <suppress>
+    <notes>CVE-XXXX-YYYY is a false positive for this artifact because ...</notes>
+    <packageUrl regex="true">^pkg:maven/io\.opentelemetry/opentelemetry\-.*$</packageUrl>
+    <cve>CVE-XXXX-YYYY</cve>
+  </suppress>
+-->
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+</suppressions>

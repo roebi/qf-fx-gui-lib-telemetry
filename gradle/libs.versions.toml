@@ -3,6 +3,7 @@ opentelemetry        = "1.62.0"
 junit-jupiter        = "6.0.3"
 junit-platform       = "6.0.3"
 assertj              = "3.27.7"
+owasp-depcheck       = "12.2.2"
 
 [libraries]
 opentelemetry-api            = { module = "io.opentelemetry:opentelemetry-api",            version.ref = "opentelemetry" }
@@ -12,3 +13,7 @@ opentelemetry-sdk-testing    = { module = "io.opentelemetry:opentelemetry-sdk-te
 junit-jupiter                = { module = "org.junit.jupiter:junit-jupiter",               version.ref = "junit-jupiter" }
 junit-platform-launcher      = { module = "org.junit.platform:junit-platform-launcher",    version.ref = "junit-platform" }
 assertj-core                 = { module = "org.assertj:assertj-core",                      version.ref = "assertj" }
+
+[plugins]
+owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "owasp-depcheck" }
+
