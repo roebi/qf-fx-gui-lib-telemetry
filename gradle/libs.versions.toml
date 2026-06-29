@@ -1,7 +1,7 @@
 [versions]
 opentelemetry        = "1.62.0"
 junit-jupiter        = "6.0.3"
-junit-platform       = "6.0.3"
+junit-platform       = "6.1.1"
 assertj              = "3.27.7"
 owasp-depcheck       = "12.2.2"
 
